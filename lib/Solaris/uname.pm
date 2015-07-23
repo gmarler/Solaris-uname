@@ -1,5 +1,14 @@
+package Solaris::uname;
+
 use strict;
 use warnings;
-package Solaris::uname;
+
+use XSLoader;
+
+# VERSION
+
+# ABSTRACT: A Perl interface to uname(2) 
+
+XSLoader::load('Solaris::uname', $VERSION);
 
 1;
