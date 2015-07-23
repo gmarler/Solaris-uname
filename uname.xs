@@ -16,8 +16,8 @@ MODULE = Solaris::uname              PACKAGE = Solaris::uname
 PROTOTYPES: ENABLED
 
 
-SV *
-uname(void)
+HV *
+uname()
   PREINIT:
   struct utsname uts;
   HV *           hash;
