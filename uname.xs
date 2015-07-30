@@ -26,7 +26,7 @@ uname()
 
     hash = newHV();
 
-    hv_store(hash, "sysname", strlen("strlen"),    newSVpv(uts.sysname,0), 0);
+    hv_store(hash, "sysname", strlen("sysname"),   newSVpv(uts.sysname,0), 0);
     hv_store(hash, "nodename", strlen("nodename"), newSVpv(uts.nodename,0), 0);
     hv_store(hash, "release", strlen("release"),   newSVpv(uts.release,0), 0);
     hv_store(hash, "version", strlen("version"),   newSVpv(uts.version,0), 0);
