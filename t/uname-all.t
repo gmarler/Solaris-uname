@@ -9,8 +9,10 @@ use IPC::System::Simple   qw(capture);
 
 use_ok( 'Solaris::uname' );
 
-can_ok( 'Solaris::uname', 'uname',
-  q{can call the uname function});
+# TODO: Make this OOP eventually
+# 
+# can_ok( 'Solaris::uname', 'uname',
+#  q{can call the uname function});
 
 my $uhref = Solaris::uname::uname();
 
@@ -35,6 +37,12 @@ sub check {
 
   my $cmd = "/usr/bin/uname " . $fields->{$check_field};
 
+  my $value = capture($cmd);
+
+  chomp $value;
+
+  cmp_ok( $value, 'eq', $uhref->{${check_field}},
+          "$value is equal to $uhref->{${check_field}}, as expected" );
   
 }
 
